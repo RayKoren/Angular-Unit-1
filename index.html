@@ -5,28 +5,26 @@
     <title>{{greeting}} World</title>
 </head>
 <body>
+
+<h1>PI digits: {{3.678159265359 | number: digits}}</h1>
+<select ng-model="digits">
+  <option value="1">1</option>
+  <option value="2">2</option>
+</select>
+<ng-pluralize count="digits"
+              when="{'1': 'One Digit of Pi.',
+                     'other': '{} digits of PI.'}">
+</ng-pluralize>
+<br><br>
+
 Talking Filter: <input type="text" name="name" value="" ng-model="talking">
 <p>Yelling: {{ talking | uppercase }}</p>
 <p>Softly: {{ talking | lowercase }}</p>
-{{3.14159265359 | number:3}}
-{{3.14159265359 | number:6}}
-{{3.14159265359 | number:1}}
-<h1>PI digits: {{pi}} <3 </h1>
-<select ng-model="pi"class="" >
-  <option value="{{3.14159265359 | number:1}}"><data value=""></data>1</option>
-  <option value="{{3.14159265359 | number:2}}"><data value=""></data>2</option>
-</select>
-<ng-pluralize count="pi"
-                 when="{'3.1': 'One Digit of Pi.',
-                     'other': '{} digits of PI.'}">
-</ng-pluralize>
-<p>
-  {{3.14159265359 | currency : "€"}}
+<br>
+<hr>
 
-  1 + 2 = {{1 + 2}}
-My name is {{"BoJack" + " Horseman"}}
-The array [99,43,22] is {{ [99,43,22].length }} items long.
-</p>
+<br>
+
   <div ng-controller="HelloController">
         <h2>Hello, {{hello.title}}!</h2>
   </div>
@@ -39,6 +37,26 @@ The array [99,43,22] is {{ [99,43,22].length }} items long.
       <input type="text" ng-model="greeting" ng-init="BOJack">
     </p>
     <p>{{ greeting }} world!</p>
+
+    <br>
+    <hr>
+    <br>
+
+    <h1>Angular Tip Calculator</h1>
+    <p>How Much Was Your Tab?</p>
+    $<input type="number" name="tab" value="" ng-model="tab" ng-init="tab = 0.00">
+    <br>
+    <p>How Much Should You Tip?</p>
+    <br>
+    <select value="0" name="tip" ng-model="tip" ng-init="tip = 0">
+      <option value=".15">15%</option>
+      <option value=".2">20%</option>
+    </select>
+    <h3>Subtotal: ${{tab}} </h3>
+    <h3>Tip: ${{tab * tip}}</h3>
+    <hr>
+
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
