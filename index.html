@@ -52,9 +52,21 @@ Talking Filter: <input type="text" name="name" value="" ng-model="talking">
       <option value=".15">15%</option>
       <option value=".2">20%</option>
     </select>
-    <h3>Subtotal: ${{tab}} </h3>
-    <h3>Tip: ${{tab * tip}}</h3>
+    <h3>Subtotal: {{tab | currency}} </h3>
+    <h3>Tip: {{tab * tip | currency}}</h3>
+    <br>
     <hr>
+    <br>
+    <h1>Mad Libs</h1>
+    Boy Name <input type="text" name="name" value="" ng-model="boyName"> <br>
+    Adjective: <input type="text" name="name" value="" ng-model="Adjective"> <br>
+    Plural Noun: <input type="text" name="name" value="" ng-model="pNoun1"> <br>
+    Plural Noun: <input type="text" name="name" value="" ng-model="pNoun2"> <br>
+    Plural Insect: <input type="text" name="name" value="" ng-model="insect"> <br>
+    Plural Noun: <input type="text" name="name" value="" ng-model="pNoun3"> <br>
+    Verb Ending in S: <input type="text" name="name" value="" ng-model="verbS"> <br>
+    <h3>I'm in love with <span>{{boyName}}</span>. He's so <span>{{Adjective}}</span>!<br> He has big flat <span>{{pNoun1}}</span>, and when our <span>{{pNoun2}}</span> meet, I get <span>{{insect}}</span> in my stomach.<br> I've fallen for him like a ton of <span>{{pNoun3}}</span>, and he <span>{{verbS}}</span> for me, too.<br> But I think he's got another girlfriend. What should I do?</h3>
+
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
