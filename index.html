@@ -1,26 +1,46 @@
 <!DOCTYPE html>
-<html ng-app>
-
+<html ng-app="myapp">
 <head>
     <meta charset="utf-8">
     <title>{{greeting}} World</title>
 </head>
-
 <body>
+Talking Filter: <input type="text" name="name" value="" ng-model="talking">
+<p>Yelling: {{ talking | uppercase }}</p>
+<p>Softly: {{ talking | lowercase }}</p>
+{{3.14159265359 | number:3}}
+{{3.14159265359 | number:6}}
+{{3.14159265359 | number:1}}
+<h1>PI digits: {{pi}} <3 </h1>
+<select ng-model="pi"class="" >
+  <option value="{{3.14159265359 | number:1}}"><data value=""></data>1</option>
+  <option value="{{3.14159265359 | number:2}}"><data value=""></data>2</option>
+</select>
+<ng-pluralize count="pi"
+                 when="{'3.1': 'One Digit of Pi.',
+                     'other': '{} digits of PI.'}">
+</ng-pluralize>
+<p>
+  {{3.14159265359 | currency : "€"}}
+
+  1 + 2 = {{1 + 2}}
+My name is {{"BoJack" + " Horseman"}}
+The array [99,43,22] is {{ [99,43,22].length }} items long.
+</p>
+  <div ng-controller="HelloController">
+        <h2>Hello, {{hello.title}}!</h2>
+  </div>
     <h1>My choice is: {{pet}} <3</h1>
     <select ng-model="pet"class="" >
       <option value="Dogs"><data value=""></data>Dog</option>
       <option value="Cats"><data value=""></data>Cats</option>
     </select>
-
-
     <p>Say something to the world
-      <input type="text" ng-model="greeting" ng-init="BOjoack">
+      <input type="text" ng-model="greeting" ng-init="BOJack">
     </p>
     <p>{{ greeting }} world!</p>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
