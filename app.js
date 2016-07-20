@@ -1,12 +1,14 @@
-angular.module("myapp", [])
-    .controller("HelloController", function($scope) {
+var app = angular.module("myapp", []);
+    app.controller("HelloController", function($scope) {
         $scope.hello = {};
         $scope.hello.title = "World";
 
-    }).controller("symbols", function($scope) {
+    });
+    app.controller("symbols", function($scope) {
         $scope.symbols = ['Spades', 'Clubs', 'Hearts', 'Diamonds'];
         $scope.symbols.title = "Big";
-    }).controller("cameras", function($scope) {
+    });
+    app.controller("cameras", function($scope) {
         $scope.cameras = [{
             title: 'Nikon D3100 DSLR',
             image: 'http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg',
@@ -29,11 +31,12 @@ angular.module("myapp", [])
 
     });
 
-$scope.overSix = function(value) {
+    app.controller("MyFirstController", function($scope){
+      $scope.name = "Severus Snape";
+    });
 
-    if (value < 6)
-        return false;
-    else
-        return true;
-
-};
+    app.controller("exerciseController", function($scope){
+      $scope.favColor = 'Blue';
+      $scope.secondsInACentury = (60 * 60 * 24 * 365 * 100);
+      $scope.rN = Date.now();
+    });

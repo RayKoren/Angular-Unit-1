@@ -89,11 +89,43 @@ The ngInit directive allows you to evaluate an expression in the current scope.
 This directive can be abused to add unnecessary amounts of logic into your templates. There are only a few appropriate uses of ngInit, such as for aliasing special properties of ngRepeat, as seen in the demo below; and for injecting data via server side scripting. Besides these few cases, you should use controllers rather than ngInit to initialize values on a scope.
 
 Why use ng-src and ng-href?
+Only use ng-src and ng-href if you have dynamic links or have to load images dynamically
 
 What are directives?
+AngularJS directives are extended HTML attributes with the prefix ng-.
+
 
 Does ng-class require an object to be passed in?
-
+no
 What order does an ng-repeat display items in?
+low to high
 
 How does ng-repeat handle duplicate data?
+if an item is added to the collection, ngRepeat will know that all other items already have DOM elements, and will not re-render them.
+
+6)
+What is $scope?
+ The $scope object is a JavaScript object that glues together controllers and views. Properties that are on the $scope object are available to both the view and the controller.
+
+
+What are Angular modules? What's the syntax for defining a module?
+What is a Module?
+You can think of a module as a container for the different parts of your app – controllers, services, filters, directives, etc.
+
+Why?
+Most applications have a main method that instantiates and wires together the different parts of the application.
+
+Angular apps don't have a main method. Instead modules declaratively specify how an application should be bootstrapped. There are several advantages to this approach:
+
+The declarative process is easier to understand.
+You can package code as reusable modules.
+The modules can be loaded in any order (or even in parallel) because modules delay execution.
+Unit tests only have to load relevant modules, which keeps them fast.
+End-to-end tests can use modules to override configuration.
+
+
+Why do we pass in $scope as an argument to controller functions?
+
+
+
+In Express, what are Angular controllers most analogous to?
