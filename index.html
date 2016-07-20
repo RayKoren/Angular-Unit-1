@@ -117,6 +117,35 @@ Talking Filter: <input type="text" name="name" value="" ng-model="talking">
   <button type="button" name="button">Sign Up!</button>
 </div>
 
+<br>
+<hr>
+<br>
+<h1>Camera Shop</h1>
+<select class="" name="" ng-model="filter">
+  <option value="rating">Rating</option>
+  <option value="price">Price</option>
+</select>
+<ul ng-controller="cameras">
+  <li>
+    <div ng-repeat="camera in cameras | orderBy: filter">
+      {{camera.title}}      <br>
+      <div ng-hide="camera.onSale === true">
+          Price: {{camera.price | currency}}
+      </div>
+      <div ng-show="camera.onSale === true" ng-class="{yellowText: camera.onSale === true}">
+        Price: {{camera.price | currency}} on sale!
+      </div>     <br>
+
+      {{camera.rating}}      <br>
+
+      <img ng-src="{{camera.image}}" alt="" />
+      <hr>
+      <br>
+    </div>
+
+  </li>
+
+</ul>
 
 
 <hr>
