@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(43, 192, 251, 0.93);
+}
+.highlight {
+  background-color: yellow;
+}
+.redText {
+  color: red;
+}
+.greenText {
+  color: green;
+}

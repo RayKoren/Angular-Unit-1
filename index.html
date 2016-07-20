@@ -2,6 +2,7 @@
 <html ng-app="myapp">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <title>{{greeting}} World</title>
 </head>
 <body>
@@ -96,9 +97,25 @@ Talking Filter: <input type="text" name="name" value="" ng-model="talking">
 <br>
 <hr>
 <br>
+<h1 ng-class='{highlight: 32 + 4 == 36}'>NG-Class</h1>
+<div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
+<div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
 
-
-
+<br>
+<hr>
+<br>
+<h1>Sign Up Page</h1>
+<br>
+<input type="password" name="name" value="" ng-model="pass">
+<div ng-class="{redText: pass.length < 6, greenText: pass.length >= 6}">
+  Your Pass is {{pass.length}} Characters
+</div>
+<div ng-show='pass.length < 6'>
+  Pass is too short son!
+</div>
+<div ng-show='pass.length >= 6'>
+  <button type="button" name="button">Sign Up!</button>
+</div>
 
 
 
