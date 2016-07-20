@@ -85,6 +85,9 @@ $scope.ageFilter = function (player) {
 
 What is the purpose of ng-init?
 
+The ngInit directive allows you to evaluate an expression in the current scope.
+This directive can be abused to add unnecessary amounts of logic into your templates. There are only a few appropriate uses of ngInit, such as for aliasing special properties of ngRepeat, as seen in the demo below; and for injecting data via server side scripting. Besides these few cases, you should use controllers rather than ngInit to initialize values on a scope.
+
 Why use ng-src and ng-href?
 
 What are directives?
