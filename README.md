@@ -81,4 +81,16 @@ $scope.ageFilter = function (player) {
     return (player.age > $scope.min_age && player.age < $scope.max_age);
 }
 
-We'll soon see how to create custom filters. What is a use case for a custom filter?
+5)
+
+What is the purpose of ng-init?
+
+Why use ng-src and ng-href?
+
+What are directives?
+
+Does ng-class require an object to be passed in?
+
+What order does an ng-repeat display items in?
+
+How does ng-repeat handle duplicate data?
